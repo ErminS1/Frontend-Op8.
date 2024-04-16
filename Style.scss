@@ -1,0 +1,128 @@
+/* Variabelen */
+$primary-color: #0e3a69;
+$secondary-color: #333;
+$border-radius: 8px;
+$font-family: Arial, sans-serif;
+$text-color: #333;
+
+/* Namespace */
+.namespace {
+    font-family: $font-family;
+    background-color: $primary-color;
+    margin: 10px;
+}
+
+/* Geneste elementen */
+.container {
+    padding: 20px;
+    .box {
+        background-color: $secondary-color;
+        color: #fff;
+        padding: 10px;
+        border-radius: $border-radius;
+    }
+}
+
+/* & gebruikt op verschillende manieren */
+.link {
+    color: $primary-color;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.modal {
+    &.open {
+        display: block;
+    }
+
+    &-content {
+        background-color: #fff;
+        padding: 20px;
+    }
+}
+
+/* Minimaal 5 variabelen */
+$padding-top: 20px;
+$padding-right: 30px;
+$padding-bottom: 20px;
+$padding-left: 30px;
+$margin: 10px;
+
+/* Operations */
+.operation {
+    width: 100px + 20px;
+    height: 200px - 50px;
+    font-size: 16px * 1.2;
+}
+
+/* Media query voor mobiel & tablet */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+}
+
+/* @import */
+@import "variables";
+
+/* @extend */
+%box-style {
+    border: 1px solid #ccc;
+    border-radius: $border-radius;
+    padding: 10px;
+}
+
+.box1 {
+    @extend %box-style;
+    background-color: #f8f8f8;
+}
+
+.box2 {
+    @extend %box-style;
+    background-color: #fff;
+}
+
+/* @if, @elseif en @else */
+$number: 10;
+
+@if $number > 10 {
+    .number {
+        color: green;
+    }
+} @else if $number < 10 {
+    .number {
+        color: red;
+    }
+} @else {
+    .number {
+        color: blue;
+    }
+}
+
+/* @for */
+@for $i from 1 through 3 {
+    .number#{$i} {
+        font-size: $i * 10px;
+    }
+}
+
+/* @each */
+$colors: (red, green, blue);
+
+@each $color in $colors {
+    .color-#{$color} {
+        background-color: $color;
+    }
+}
+
+/* @while */
+$i: 1;
+@while $i < 5 {
+    .while-#{$i} {
+        width: $i * 50px;
+    }
+    $i: $i + 1;
+}

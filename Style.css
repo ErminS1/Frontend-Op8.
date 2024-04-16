@@ -1,0 +1,72 @@
+/* Variabelen */
+/* Grid */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 20px;
+}
+
+/* Flexbox */
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Headers */
+h1, h2, h3, h4, h5, h6 {
+  color: #0e355f;
+  font-family: Arial, sans-serif;
+}
+
+/* Links */
+a {
+  color: #144375;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Main styles */
+header {
+  background-color: #007bff;
+  color: #fff;
+  padding: 20px;
+}
+
+main {
+  padding: 20px;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}
+
+/* Article styles */
+article {
+  background-color: #f8f8f8;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Section styles */
+section {
+  margin-bottom: 20px;
+}
+
+/* Button styles */
+button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #0062cc;
+}/*# sourceMappingURL=Style.css.map */
